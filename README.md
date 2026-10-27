@@ -23,8 +23,3 @@ Protótipo responsivo baseado na referência visual enviada: identidade rosa/flo
 - Comando de voz em navegadores compatíveis.
 - Ajuste do tamanho do texto e tema escuro.
 - Histórico local de simulações.
-
-## Limitações importantes
-Este protótipo não envia WhatsApp/SMS, não chama a polícia, não envia coordenadas e não confirma recebimento. Os contatos de exemplo são fictícios e servem somente para demonstração. Não utilize para situações reais de risco.
-
-Para uma aplicação real, implemente backend seguro, autenticação, autorização e consentimento, proteção de dados pessoais, provedor de mensagens aprovado e procedimentos de emergência validados com os órgãos responsáveis. Não exponha chaves privadas de APIs no frontend.
