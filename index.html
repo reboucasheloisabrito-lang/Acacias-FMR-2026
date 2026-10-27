@@ -10,9 +10,7 @@
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <button class="icon-button" id="menuButton" aria-label="Abrir menu">☰</button>
       <a class="logo" href="#" aria-label="M!SS início"><span class="logo-flower">✿</span>M!SS</a>
-      <button class="icon-button" id="settingsButton" aria-label="Configurações">⚙</button>
     </header>
 
     <main>
@@ -20,13 +18,14 @@
         <div class="greeting">
           <div>
             <p class="eyebrow">SUA REDE DE PROTEÇÃO</p>
-            <h1 id="homeTitle">Olá, Maria</h1>
+            <h1 id="homeTitle">Olá, Maria <span class="wave">♡</span></h1>
             <p class="subheading">Sua segurança importa. Você não está sozinha.</p>
           </div>
-          <div class="avatar">M</div>
         </div>
 
-        <div class="section-label"><span>O que está acontecendo?</span><span class="sparkle">✦</span></div>
+        
+
+        <div class="section-label"><span>O que está acontecendo?</span></div>
 
         <button class="alert-card urgent" id="dangerButton">
           <span class="alert-symbol">!</span>
@@ -50,6 +49,8 @@
           <span class="mic">♩</span>
           <span><strong>Precisa de ajuda para usar?</strong><small>Toque para experimentar o comando por voz</small></span>
         </button>
+
+        
         <p class="disclaimer">Protótipo acadêmico. Não substitui serviços oficiais de emergência.</p>
       </section>
 
@@ -60,7 +61,7 @@
           <h1 id="contactsTitle">Minha rede de apoio</h1>
           <p class="subheading">Organize quem pode receber seus pedidos de ajuda.</p>
         </div>
-        <div class="priority-note"><span>✦</span><p><strong>Prioridade 1</strong> recebe primeiro o alerta de perigo iminente. Você pode alterar a ordem quando quiser.</p></div>
+        <div class="priority-note"><p><strong>Prioridade 1</strong> recebe primeiro o alerta de perigo iminente. Você pode alterar a ordem quando quiser.</p></div>
         <div id="contactList" class="contact-list"></div>
         <button id="addContactButton" class="primary-button full-width">＋ Adicionar contato</button>
       </section>
@@ -143,8 +144,8 @@
     </form>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-  <script src="js/model.js"></script>
-  <script src="js/view.js"></script>
-  <script src="js/controller.js"></script>
+  <script src="model.js"></script>
+  <script src="view.js"></script>
+  <script src="controller.js"></script>
 </body>
 </html>
