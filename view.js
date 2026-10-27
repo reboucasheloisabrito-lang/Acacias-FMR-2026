@@ -31,9 +31,9 @@ const MissView = (() => {
       const item=document.createElement("article");item.className="history-item";
       const dot=document.createElement("span");dot.className=`history-dot ${e.type==="danger"?"urgent":""}`;
       const body=document.createElement("div");
-      const title=document.createElement("strong");title.textContent=e.type==="danger"?"Simulação: perigo iminente":"Simulação: estou insegura";
+      const title=document.createElement("strong");title.textContent=e.type==="danger"?"Alerta: perigo iminente":"Alerta: estou insegura";
       const time=document.createElement("small");time.textContent=new Date(e.at).toLocaleString("pt-BR");
-      const status=document.createElement("small");status.textContent=`${e.count} contato(s) considerados. Nenhuma mensagem enviada.`;
+      const status=document.createElement("small");status.textContent=`${e.count} contato(s) acionados pelo WhatsApp/telefone.`;
       body.append(title,time,status);item.append(dot,body);list.append(item);
     });
   }
@@ -48,17 +48,25 @@ const MissView = (() => {
     $("modalEyebrow").textContent=urgent?"ALERTA PRIORITÁRIO":"PEDIDO DE ACOMPANHAMENTO";
     $("modalTitle").textContent=urgent?"Você está em perigo iminente?":"Você está se sentindo insegura?";
     $("modalDescription").textContent=urgent
-      ?"Vamos simular um pedido urgente para os contatos de prioridade 1 e, em seguida, os demais contatos da sua rede."
-      :"Vamos simular uma mensagem pedindo que sua rede de confiança entre em contato com você.";
+      ?"Vamos enviar um pedido urgente para os contatos de prioridade 1."
+      :"Vamos enviar uma mensagem pedindo que sua rede de confiança entre em contato com você.";
     const recipients=urgent?contacts.filter(c=>c.priority===1):contacts;
     $("modalRecipients").textContent=recipients.length
       ? `Destinatários previstos: ${recipients.map(c=>c.name).join(", ")}.`
       :"Nenhum contato cadastrado ainda.";
     $("modalLocation").hidden=!location;
-    $("modalLocation").textContent=location?`Localização disponível nesta sessão: ${location.lat.toFixed(5)}, ${location.lng.toFixed(5)}. A localização não será enviada neste protótipo.`:"";
-    $("confirmAlert").textContent=urgent?"Simular alerta urgente":"Simular pedido de apoio";
+    $("modalLocation").textContent=location?`Localização disponível nesta sessão: ${location.lat.toFixed(5)}, ${location.lng.toFixed(5)}. Ela será incluída na mensagem.`:"";
+    $("confirmAlert").textContent=urgent?"Enviar alerta urgente":"Enviar pedido de apoio";
+    $("modalSend").hidden=true;$("modalSend").replaceChildren();$("modalWarning").hidden=false;
+    $("confirmAlert").hidden=false;$("cancelAlert").textContent="Voltar";
     if(dialog.showModal) dialog.showModal();
     return recipients;
+  }
+  function showSendLinks(links){
+    const box=$("modalSend");box.replaceChildren();
+    const intro=document.createElement("p");intro.textContent="Toque em cada contato para enviar (o primeiro já foi aberto):";box.append(intro);
+    links.forEach(l=>{const a=document.createElement("a");a.className="send-link";a.href=l.href;a.target="_blank";a.rel="noopener";a.textContent=l.label;box.append(a);});
+    box.hidden=false;$("modalWarning").hidden=true;$("confirmAlert").hidden=true;$("cancelAlert").textContent="Concluir";
   }
   function closeAlert(){ $("alertDialog").close(); }
   function getFormData(){return {name:$("nameInput").value.trim(),phone:$("phoneInput").value.trim(),role:$("roleInput").value,priority:Number($("priorityInput").value)};}
@@ -70,5 +78,5 @@ const MissView = (() => {
     $("locationText").textContent=`Precisão aproximada: ${Math.round(location.accuracy)} m.`;
     $("locationButton").textContent="Atualizar";
   }
-  return {showScreen,renderContacts,renderHistory,showToast,openAlert,closeAlert,getFormData,resetForm,setLocation,getLocation};
+  return {showScreen,renderContacts,renderHistory,showToast,openAlert,closeAlert,getFormData,resetForm,setLocation,getLocation,showSendLinks};
 })();

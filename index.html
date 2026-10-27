@@ -23,7 +23,11 @@
           </div>
         </div>
 
-        
+        <div class="location-card">
+          <span class="location-icon">◉</span>
+          <span class="location-copy"><strong id="locationTitle">Localização não compartilhada</strong><span id="locationText">Toque em “Ativar” para incluir sua posição nos alertas.</span></span>
+          <button id="locationButton" class="secondary-button" type="button">Ativar</button>
+        </div>
 
         <div class="section-label"><span>O que está acontecendo?</span></div>
 
@@ -136,10 +140,11 @@
       <p id="modalDescription"></p>
       <div id="modalRecipients" class="recipient-preview"></div>
       <div id="modalLocation" class="location-preview" hidden></div>
-      <p class="modal-warning">Modo de demonstração: nenhuma mensagem será enviada e nenhum serviço de emergência será acionado.</p>
+      <div id="modalSend" class="send-list" hidden></div>
+      <p id="modalWarning" class="modal-warning">Ao confirmar, o WhatsApp abrirá com a mensagem pronta para o primeiro contato; use os botões para avisar os demais. Em emergência real, ligue 190.</p>
       <div class="modal-actions">
-        <button class="secondary-button" value="cancel">Voltar</button>
-        <button id="confirmAlert" class="primary-button" value="confirm">Simular pedido</button>
+        <button id="cancelAlert" class="secondary-button" value="cancel">Voltar</button>
+        <button id="confirmAlert" class="primary-button" value="confirm">Enviar pedido</button>
       </div>
     </form>
   </dialog>

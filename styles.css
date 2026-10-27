@@ -131,3 +131,9 @@ body.large-text{font-size:19px}
 body.xlarge-text{font-size:21px}
 @media(min-width:541px){body{padding:18px 0}.app-shell{min-height:calc(100dvh - 36px);border-radius:28px}.topbar{border-radius:28px 28px 0 0}.bottom-nav{bottom:18px;border-radius:0 0 28px 28px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.send-list{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.send-list p{margin:0 0 4px;font-weight:700}
+.send-link{display:block;padding:13px 14px;border-radius:13px;background:#e8f8ee;border:1px solid #b6e3c6;color:#14532d;font-weight:800;font-size:.88rem;text-decoration:none}
+.send-link:hover{filter:brightness(.97)}
+body.dark .send-link{background:#1f3a2b;border-color:#2f6b49;color:#c9f2d8}
