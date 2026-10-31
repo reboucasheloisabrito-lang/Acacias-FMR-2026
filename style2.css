@@ -46,4 +46,9 @@ input:focus{border-color:var(--pink)}
 .disclaimer{font-size:.7rem;color:#887783;text-align:center;margin:20px 10px 0}
    
 @media(min-width:541px){body{padding:18px 0}.app-shell{min-height:calc(100dvh - 36px);border-radius:28px}.topbar{border-radius:28px 28px 0 0}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}   
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.form-hint.error{color:#bd152c;font-weight:700}
+.form-hint.ok{color:#14532d;font-weight:700}
+.form-link{text-align:center;font-size:.85rem;color:var(--muted);margin:16px 0 0}
+.form-link a{color:var(--pink-dark);font-weight:800}
