@@ -10,7 +10,7 @@
     function salvarConta(perfil) { try { localStorage.setItem(ACCOUNT_KEY, JSON.stringify(perfil)); return true; } catch { return false; } }
     function iniciarSessao(email) { try { sessionStorage.setItem(SESSION_KEY, JSON.stringify({ email, at: Date.now() })); return true; } catch { return false; } }
   
-    function mensagem(el, texto, tipo) {
+    function mensagens(el, texto, tipo) {
       if (!el) return;
       el.textContent = texto || "";
       el.className = "form-hint" + (tipo ? " " + tipo : "");
