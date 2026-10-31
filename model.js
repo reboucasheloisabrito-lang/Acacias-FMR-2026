@@ -1,13 +1,12 @@
-/* MODEL: dados de demonstração e persistência local. */
 const MissModel = (() => {
   const CONTACTS_KEY = "miss.contacts.v1";
   const HISTORY_KEY = "miss.history.v1";
   const defaults = [
     {id:"demo-1", name:"Polícia", phone:"190", role:"Polícia / serviço oficial", priority:1, demo:true},
-    {id:"demo-2", name:"Filha", phone:"(43) 99999-1234", role:"Familiar", priority:1, demo:true},
-    {id:"demo-3", name:"Vizinha Maria", phone:"(43) 98888-7654", role:"Vizinha(o)", priority:2, demo:true},
-    {id:"demo-4", name:"Neta", phone:"(43) 97777-4321", role:"Familiar", priority:2, demo:true},
-    {id:"demo-5", name:"Vizinho João", phone:"(43) 92222-3344", role:"Vizinha(o)", priority:3, demo:true}
+    {id:"demo-2", name:"Filha", phone:"(43) 99999-1234", role:"Familiar", priority:2, demo:true},
+    {id:"demo-3", name:"Vizinha Maria", phone:"(43) 98888-7654", role:"Vizinha(o)", priority:3, demo:true},
+    {id:"demo-4", name:"Neta", phone:"(43) 97777-4321", role:"Familiar", priority:4, demo:true},
+    {id:"demo-5", name:"Vizinho João", phone:"(43) 92222-3344", role:"Vizinha(o)", priority:5, demo:true}
   ];
   function read(key, fallback=[]) {
     try { const v = JSON.parse(localStorage.getItem(key)); return Array.isArray(v) ? v : fallback; }
