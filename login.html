@@ -1,38 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>M!SS - Rede de Proteção</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src="model.js"></script>
-   <script src="view.js"></script>
-   <script src="controller.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>M!SS - Rede de Proteção</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="style2.css">
+  <script src="auth.js" defer></script>
 </head>
 <body>
-    <div>
-        <img src=''>
-      </div>
-      <div class = "intro">
-        <h2>Bem-vinda ao</h2>
-        <div class="logo">
-        <a class="logo" href="#" aria-label="M!SS início"><span class="logo-flower">✿</span>M!SS</a>
-      </div>
-      </div>
-      <div class="forms">
-        <input type="text" placeholder="Ex: nome@gmail.com">Email</input>
-        <br>
-        <br>
-        <input type="password" placeholder="senha">Senha</input>
-        <br>
-        <br>
-        <input type="password" placeholder="confirmar senha">Confirmar Senha</input>
-        <br>
-        <br>
-      </div>
-      
-      <br>
-      <button>Entrar</button>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="logo" href="#" aria-label="M!SS início"><span class="logo-flower">✿</span>M!SS</a>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1>Bem-vinda ao M!SS</h1>
+        <p class="subheading">Entre para acessar sua rede de proteção.</p>
+      </section>
+
+      <form class="form-card" id="login">
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="Ex: nome@gmail.com" autocomplete="email" required>
+
+        <label for="senha">Senha</label>
+        <input id="senha" name="senha" type="password" placeholder="Senha" autocomplete="current-password" required>
+
+        <label for="confirmar">Confirmar senha</label>
+        <input id="confirmar" name="confirmar" type="password" placeholder="Confirmar senha" autocomplete="current-password" required>
+
+        <p class="form-hint" id="loginStatus" role="status" aria-live="polite" hidden></p>
+
+        <button class="primary-button full-width" type="submit">Entrar</button>
+      </form>
+
+      <p class="form-link">Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </main>
+  </div>
 </body>
 </html>
