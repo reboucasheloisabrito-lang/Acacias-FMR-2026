@@ -6,9 +6,7 @@
   <title>M!SS - Rede de Proteção</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="style2.css">
-  <script src="model.js" defer></script>
-  <script src="view.js" defer></script>
-  <script src="controller.js" defer></script>
+  <script src="auth.js" defer></script>
 </head>
 <body>
   <div class="app-shell">
@@ -36,7 +34,8 @@
         <input id="senha" name="senha" type="password" placeholder="Senha" autocomplete="new-password" required>
 
         <label for="cep">CEP</label>
-        <input id="cep" name="cep" type="text" inputmode="numeric" maxlength="9" placeholder="00000-000" autocomplete="postal-code" required>
+        <input id="cep" name="cep" type="text" inputmode="numeric" maxlength="9" pattern="\d{5}-?\d{3}" title="Digite os 8 números do CEP" placeholder="00000-000" autocomplete="postal-code" required>
+        <p class="form-hint" id="cepStatus" role="status" aria-live="polite" hidden></p>
 
         <label for="bairro">Bairro</label>
         <input id="bairro" name="bairro" type="text" placeholder="Bairro" required>
@@ -52,8 +51,12 @@
           </div>
         </div>
 
+        <p class="form-hint" id="cadastroStatus" role="alert" hidden></p>
+
         <button class="primary-button full-width" type="submit">Cadastrar</button>
       </form>
+
+      <p class="form-link">Já tem conta? <a href="login.html">Entrar</a></p>
 
       <p class="disclaimer">Seus dados são usados apenas para sua segurança.</p>
     </main>
